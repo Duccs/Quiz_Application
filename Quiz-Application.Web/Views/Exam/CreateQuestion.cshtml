@@ -1,0 +1,98 @@
+﻿@model Quiz_Application.Web.Models.CreateQuestionViewModel
+
+@{
+	ViewData["Title"] = "CreateQuestion";
+}
+
+<div style="margin-left:20px">
+
+	<h1 style="padding-top:10px">Create Question</h1>
+	<form asp-action="CreateQuestion">
+		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group" style="padding:10px 0 10px 0">
+					<label asp-for="ExamID" class="control-label"></label>
+					<select asp-for="ExamID" class="form-control" placeholder="Exam" asp-items="ViewBag.ExamID"></select>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group" style="padding:10px 0 10px 0">
+					<label asp-for="QuestionType" class="control-label"></label>
+					<input asp-for="QuestionType" class="form-control" />
+					<span asp-validation-for="QuestionType" class="text-danger"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group" style="padding:10px 0 10px 0">
+					<label asp-for="QuestionText" class="control-label"></label>
+					<input asp-for="QuestionText" class="form-control" />
+					<span asp-validation-for="QuestionText" class="text-danger"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group" style="padding:10px 0 10px 0">
+					<label asp-for="ChoiceOne" class="control-label"></label>
+					<input asp-for="ChoiceOne" class="form-control" />
+					<span asp-validation-for="ChoiceOne" class="text-danger"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group" style="padding:10px 0 10px 0">
+					<label asp-for="ChoiceTwo" class="control-label"></label>
+					<input asp-for="ChoiceTwo" class="form-control" />
+					<span asp-validation-for="ChoiceTwo" class="text-danger"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group" style="padding:10px 0 10px 0">
+					<label asp-for="ChoiceThree" class="control-label"></label>
+					<input asp-for="ChoiceThree" class="form-control" />
+					<span asp-validation-for="ChoiceThree" class="text-danger"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group" style="padding:10px 0 10px 0">
+					<label asp-for="ChoiceFour" class="control-label"></label>
+					<input asp-for="ChoiceFour" class="form-control" />
+					<span asp-validation-for="ChoiceFour" class="text-danger"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group" style="padding:10px 0 10px 0">
+					<label asp-for="ChoiceNo" class="control-label"></label>
+					<input asp-for="ChoiceNo" class="form-control" />
+					<span asp-validation-for="ChoiceNo" class="text-danger"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group" style="padding:10px 0 10px 0">
+					<input type="submit" value="Create" class="btn btn-primary" />
+					<a asp-action="Index">Back to List</a>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+	}

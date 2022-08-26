@@ -1,0 +1,55 @@
+﻿@model Quiz_Application.Services.Entities.Exam
+
+@{
+    ViewData["Title"] = "CreateExam";
+}
+
+<div style="margin-left:20px">
+    <h1 style="padding-top:10px">Create Exam</h1>
+    <hr />
+    <form asp-action="CreateExam">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group" style="padding:10px 0 10px 0">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group" style="padding:10px 0 10px 0">
+                <label asp-for="FullMarks" class="control-label"></label>
+                <input asp-for="FullMarks" class="form-control" />
+                <span asp-validation-for="FullMarks" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group" style="padding:10px 0 10px 0">
+                <label asp-for="Duration" class="control-label"></label>
+                <input asp-for="Duration" class="form-control" />
+                <span asp-validation-for="Duration" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group" style="padding:10px 0 10px 0">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

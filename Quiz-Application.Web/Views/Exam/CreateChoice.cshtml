@@ -1,0 +1,46 @@
+﻿@model Quiz_Application.Services.Entities.Choice
+
+@{
+    ViewData["Title"] = "CreateChoice";
+}
+
+<div style="margin-left:20px">
+    <h1 style="padding-top:10px">Create Choice</h1>
+    <hr />
+    <form asp-action="CreateChoice">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group" style="padding:10px 0 10px 0">
+                <label asp-for="QuestionID" class="control-label"></label>
+                <select asp-for="QuestionID" class="form-control" placeholder="Question" asp-items="ViewBag.QuestionID"></select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group" style="padding:10px 0 10px 0">
+                <label asp-for="DisplayText" class="control-label"></label>
+                <input asp-for="DisplayText" class="form-control" />
+                <span asp-validation-for="DisplayText" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="form-group" style="padding:10px 0 10px 0">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index">Back to List</a>
+
+                </div>
+            </div>
+        </div>
+        </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

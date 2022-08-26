@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Quiz_Application.Services</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Repository\Candidate\**" />
+    <Compile Remove="Repository\Exam\**" />
+    <Compile Remove="Repository\Question\**" />
+    <Compile Remove="Repository\Result\**" />
+    <EmbeddedResource Remove="Repository\Candidate\**" />
+    <EmbeddedResource Remove="Repository\Exam\**" />
+    <EmbeddedResource Remove="Repository\Question\**" />
+    <EmbeddedResource Remove="Repository\Result\**" />
+    <None Remove="Repository\Candidate\**" />
+    <None Remove="Repository\Exam\**" />
+    <None Remove="Repository\Question\**" />
+    <None Remove="Repository\Result\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
